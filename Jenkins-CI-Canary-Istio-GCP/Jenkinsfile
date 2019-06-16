@@ -3,7 +3,7 @@ def gitSHA
 pipeline {
   environment {
     registry = "samour/sample_App"
-    registryCredential = 'Ro@t4ct!oN'
+    registryCredential = 'maisalreem12&&&&&'
   }
   agent {
     kubernetes {
@@ -34,9 +34,9 @@ pipeline {
       }
       steps {
         container('docker') {
-          sh 'docker login -u token -p ${REGISTRY_TOKEN} registry.ng.bluemix.net'
-          sh 'docker build -t $IMAGE_REGISTRY/sampleapp:$TAG .'
-          sh 'docker push $IMAGE_REGISTRY/sampleapp:$TAG'
+          sh 'echo "maisalreem12&&&&&"|docker login --username samour --password-stdin'
+          sh 'docker build -t samour/sampleapp:$TAG .'
+          sh 'docker push samour/sampleapp:$TAG'
         }
       }
     }
